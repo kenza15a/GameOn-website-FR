@@ -32,6 +32,33 @@ let regDate = /^(0[1-9]|1[0-2])\/(0[1-9]|1\d|2\d|3[01])\/(19|20)\d{2}$/;
 
 
 /*fonctions de validation*/
+
+/*verification au fur et a mesure*/
+
+prenom.addEventListener('input',
+function validPrenom(e) {
+  var state = false;
+  var message = ""
+
+  if (e.target.value.length < 2) {
+    prenom.style.border = " solid red";
+    message = " Veuillez entrer 2 caractères ou plus pour le champ du prenom ";
+  }
+  else {
+  if(regNames.test((e.target.value)))
+    {
+    message = ""
+    state = true;
+    prenom.style.border = " solid transparent";
+     }
+  else{
+    prenom.style.border = " solid red";
+    message = " Mauvais format";
+  }
+}
+  erreurPrenom.innerText = message;
+  return state;
+});
 function validPrenom() {
   var state = false;
   var message = ""
@@ -41,7 +68,7 @@ function validPrenom() {
     message = " Veuillez entrer 2 caractères ou plus pour le champ du prenom ";
   }
   else {
-    if(regNames.test((prenom.value)))
+  if(regNames.test((prenom.value)))
     {
     message = ""
     state = true;
@@ -207,10 +234,9 @@ formReservation.addEventListener('submit', function (e) {
     e.preventDefault();
 
   } else {
-
-
     /*afficher les informations*/
-    alert("Merci ! Votre réservation a été reçue");
+    alert("Merci : "+  prenom.value +" ! Votre réservation a été reçue"
+    );
   }
 }
 );
