@@ -35,156 +35,156 @@ let regDate = /([12]\d{3}-(0[1-9]|1[0-2])-(0[1-9]|[12]\d|3[01]))/;
 
 
 function validPrenom() {
-    var state = false;
-    var message = ""
+  var state = false;
+  var message = ""
 
-    if (prenom.value.length < 2) {
-        prenom.style.border = " solid red";
-        message = " Veuillez entrer 2 caractères ou plus pour le champ du prenom ";
+  if (prenom.value.length < 2) {
+    prenom.style.border = " solid red";
+    message = " Veuillez entrer 2 caractères ou plus pour le champ du prenom ";
+  }
+  else {
+    if (regNames.test((prenom.value))) {
+      message = ""
+      state = true;
+      prenom.style.border = " solid transparent";
     }
     else {
-        if (regNames.test((prenom.value))) {
-            message = ""
-            state = true;
-            prenom.style.border = " solid transparent";
-        }
-        else {
-            prenom.style.border = " solid red";
-            message = " Mauvais format";
-        }
+      prenom.style.border = " solid red";
+      message = " Mauvais format";
     }
-    erreurPrenom.innerText = message;
-    return state;
+  }
+  erreurPrenom.innerText = message;
+  return state;
 }
 
 
 /*validation nom*/
 function validNom() {
-    var state = false;
-    var message = "";
+  var state = false;
+  var message = "";
 
-    if (nom.value.length < 2) {
-        nom.style.border = " solid red";
-        message = " Veuillez entrer 2 caractères ou plus pour le champ du nom ";
+  if (nom.value.length < 2) {
+    nom.style.border = " solid red";
+    message = " Veuillez entrer 2 caractères ou plus pour le champ du nom ";
+  }
+  else {
+    if (regNames.test((nom.value))) {
+      message = ""
+      state = true;
+      nom.style.border = " solid transparent";
+    } else {
+      nom.style.border = " solid red";
+      message = " Mauvais format ";
     }
-    else {
-        if (regNames.test((nom.value))) {
-            message = ""
-            state = true;
-            nom.style.border = " solid transparent";
-        } else {
-            nom.style.border = " solid red";
-            message = " Mauvais format ";
-        }
-    }
-    erreurNom.innerText = message;
-    return state;
+  }
+  erreurNom.innerText = message;
+  return state;
 }
 
 
 function validMail() {
-    var state = false;
-    var message = "";
+  var state = false;
+  var message = "";
 
-    if (regMail.test(email.value)) {
-        message = "";
-        state = true;
-        email.style.border = " solid transparent";
+  if (regMail.test(email.value)) {
+    message = "";
+    state = true;
+    email.style.border = " solid transparent";
 
-    }
+  }
 
-    else {
-        email.style.border = " solid red";
-        message = " email non valide ";
-    }
+  else {
+    email.style.border = " solid red";
+    message = " email non valide ";
+  }
 
-    mailerror.innerText = message;
-    return state;
+  mailerror.innerText = message;
+  return state;
 }
 
 
 /*validation concours*/
 const validConcours = () => {
-    var state = false;
-    var message = ""
-    if (nombreConcours.value.length > 0) {
-        if (regConcours.test(nombreConcours.value)) {
-            message = ""
-            state = true;
-            nombreConcours.style.border = " solid transparent";
+  var state = false;
+  var message = ""
+  if (nombreConcours.value.length > 0) {
+    if (regConcours.test(nombreConcours.value)) {
+      message = ""
+      state = true;
+      nombreConcours.style.border = " solid transparent";
 
-        } else {
-            nombreConcours.style.border = " solid red";
-            message = " veuillez inserer un chiffre  entre 0 et 99 ";
-        }
     } else {
-        nombreConcours.style.border = " solid red";
-        message = "Ce champs ne doit pas etre vide ";
+      nombreConcours.style.border = " solid red";
+      message = " veuillez inserer un chiffre  entre 0 et 99 ";
     }
-    concoursError.innerText = message;
-    return state;
+  } else {
+    nombreConcours.style.border = " solid red";
+    message = "Ce champs ne doit pas etre vide ";
+  }
+  concoursError.innerText = message;
+  return state;
 }
 
 
 /*check location radio*/
 const validateLocation = () => {
-    var state = false;
-    var message = "";
-    for (i = 0; i < tabLocations.length; i++) {
-        if (tabLocations[i].checked) {
-            state = true;
-            var message = "";
-            break;
-        } else {
-            message = "Vous devez choisir une option!"
-        }
+  var state = false;
+  var message = "";
+  for (i = 0; i < tabLocations.length; i++) {
+    if (tabLocations[i].checked) {
+      state = true;
+      var message = "";
+      break;
+    } else {
+      message = "Vous devez choisir une option!"
     }
-    locationError.innerText = message;
-    return state;
+  }
+  locationError.innerText = message;
+  return state;
 }
 
 /*validation des conditions*/
 
 const validConditions = () => {
-    var state = false;
-    var message = "";
-    if (conditions.checked) {
-        state = true;
-    } else {
-        message = "Vous devez vérifier que vous acceptez les termes et conditions.";
-    }
-    errorConditions.innerText = message;
-    return state;
+  var state = false;
+  var message = "";
+  if (conditions.checked) {
+    state = true;
+  } else {
+    message = "Vous devez vérifier que vous acceptez les termes et conditions.";
+  }
+  errorConditions.innerText = message;
+  return state;
 }
 /*verification de la date*/
 const validDate = () => {
-    var state = false;
+  var state = false;
+  message = "";
+  if (!(regDate.test(birthdate.value))) {
+    message = "Vous devez renseigner votre date de naissance";
+    birthdate.style.border = "solid red";
+  } else {
+    state = true;
+    birthdate.style.border = "solid transparent";
     message = "";
-    if (!(regDate.test(birthdate.value))) {
-        message = "Vous devez renseigner votre date de naissance";
-        birthdate.style.border = "solid red";
-    } else {
-        state = true;
-        birthdate.style.border = "solid transparent";
-        message = "";
-    }
-    dateError.innerText = message;
-    return state;
+  }
+  dateError.innerText = message;
+  return state;
 }
 
 function validForm() {
-    var prenomValidState = validPrenom();
-    var nomValidState = validNom();
-    var validMailState = validMail();
-    var validLocationState = validateLocation();
-    var validConditionState = validConditions();
-    var validConcoursState = validConcours();
-    var validDateState = validDate();
-    var state = false;
-    if (prenomValidState && nomValidState && validConcoursState && validMailState && validLocationState && validConditionState&& validDateState) {
-        state = true;
-    }
-    return state;
+  var prenomValidState = validPrenom();
+  var nomValidState = validNom();
+  var validMailState = validMail();
+  var validLocationState = validateLocation();
+  var validConditionState = validConditions();
+  var validConcoursState = validConcours();
+  var validDateState = validDate();
+  var state = false;
+  if (prenomValidState && nomValidState && validConcoursState && validMailState && validLocationState && validConditionState && validDateState) {
+    state = true;
+  }
+  return state;
 }
 
 /*events*/
@@ -193,23 +193,20 @@ nom.addEventListener("input", validNom);
 nombreConcours.addEventListener("input", validConcours);
 email.addEventListener("input", validMail);
 birthdate.addEventListener("input", validDate);
-//location.addEventListener("RadioStateChange", validateLocation);
-
-
-
 
 /*verification generale*/
 formReservation.addEventListener('submit', function (e) {
 
-    if (!validForm()) {
+  if (!validForm()) {
 
-        e.preventDefault();
+    e.preventDefault();
 
-    } else {
-        /*afficher les informations*/
-        alert("Merci : " + prenom.value + " ! Votre réservation a été reçue"
-        );
-    }
+  } else {
+    /*afficher les informations*/
+    //alert("Merci : " + prenom.value + " ! Votre réservation a été reçue");
+    changeModalContent();
+
+  }
 }
 );
 

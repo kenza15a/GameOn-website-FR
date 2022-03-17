@@ -196,6 +196,29 @@ main {
   padding: 15px 8%;
   margin: 15px auto;
 }
+.answer-modal{
+  position: relative;
+  height: 95vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+}
+.answer-modal .btn-submit{
+  position: absolute;
+  bottom: 5%;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+.answer-modal h2{
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 200px;
+  text-align: center;
+}
 
 label {
   font-family: var(--font-default);
