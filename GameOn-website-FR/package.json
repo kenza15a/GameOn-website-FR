@@ -1,0 +1,26 @@
+{
+  "name": "projet4_openclassrooms",
+  "version": "1.0.0",
+  "description": "openclassrooms p4 javascript pour le web",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kenza15a/GameOn-website-FR.git"
+  },
+  "keywords": [
+    "javascript",
+    "forms",
+    "form",
+    "validation",
+    "css"
+  ],
+  "author": "kenza Filali",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kenza15a/GameOn-website-FR/issues"
+  },
+  "homepage": "https://github.com/kenza15a/GameOn-website-FR#readme"
+}

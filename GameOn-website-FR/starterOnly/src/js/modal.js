@@ -30,15 +30,15 @@ function closeModal() {
   modalbg.style.display = "none"; //masquer le modal
 }
 
-
 /*modal de confirmation*/
 
 function changeModalContent() {
-  modalbg.style.display = "block";
+  //modalbg.style.display = "block";
+  closeSpan.addEventListener("click", closeModal);
   modalBody.classList.add("answer-modal");
   modalBody.innerHTML = '<div><h2>Merci ! Votre réservation a été reçue </h2></div><div><input id="fermer" class="btn-submit button" type="submit"  value="fermer" onclick="closeModal()"/></div>';
-
 }
+
 
 
 
