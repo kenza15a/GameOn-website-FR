@@ -101,7 +101,7 @@
   }
   
   .content {
-    margin: 5% auto;
+    margin: 20% auto;
     width: 100%;
     max-width: 500px;
     animation-name: modalopen;
@@ -484,8 +484,6 @@
     margin-top: 40px;
     width:90vw;
   }
-  .content {
-    margin: 20% auto;}
   .bground {
     display: none;
     position: fixed;
