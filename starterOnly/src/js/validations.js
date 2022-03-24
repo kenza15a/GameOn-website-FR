@@ -129,20 +129,23 @@ const validConcours = () => {
 
 /*check location radio*/
 const validateLocation = () => {
-  var state = false;
-  var message = "";
-  for (i = 0; i < tabLocations.length; i++) {
-    if (tabLocations[i].checked) {
-      state = true;
-      var message = "";
-      break;
-    } else {
-      message = "Vous devez choisir une option!"
-    }
-  }
-  locationError.innerText = message;
-  return state;
+  
+ var state = false;
+ var message = "";
+ for (i = 0; i < tabLocations.length; i++) {
+  tabLocations[i].addEventListener("click",validateLocation);
+   if (tabLocations[i].checked) {
+     state = true;
+     var message = "";
+     break;
+   } else {
+     message = "Vous devez choisir une option!"
+   }
+ }
+ locationError.innerText = message;
+ return state;
 }
+
 
 /*validation des conditions*/
 
@@ -191,7 +194,7 @@ function validForm() {
 /*events*/
 prenom.addEventListener("input", validPrenom);
 nom.addEventListener("input", validNom);
-nombreConcours.addEventListener("change", validConcours);
+nombreConcours.addEventListener("input", validConcours);
 email.addEventListener("input", validMail);
 birthdate.addEventListener("input", validDate);
 conditions.addEventListener("change", validConditions);
