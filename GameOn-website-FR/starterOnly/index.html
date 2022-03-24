@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 
 <head>
   <meta charset="utf-8" />
@@ -14,21 +14,21 @@
 <body>
   <div class="topnav" id="myTopnav">
     <div class="header-logo">
-     <a href="index.html"><img alt="logo" src="public/images/Logo.png" width="auto" height="auto" /></a> 
+      <a href="index.html"><img alt="logo" src="public/images/Logo.png" /></a>
     </div>
     <div class="main-navbar">
 
-     <!-- <a href="index.html" class="active"><span>Accueil</span></a>-->
-      <a href="#"class="active"><span>Détails de l'évènement</span></a>
+      <!-- <a href="index.html" class="active"><span>Accueil</span></a>-->
+      <a href="#" class="active"><span>Détails de l'évènement</span></a>
       <a href="#"><span>À propos</span></a>
       <a href="#"><span>Contact</span></a>
       <a href="#"><span>Évènements passés</span></a>
-      <a href="javascript:void(0);" class="icon" onclick="editNav()">
+      <a href="javascript:void(0);" class="icon">
         <i class="fa fa-bars"></i>
       </a>
     </div>
   </div>
-  </div>
+
   <main>
     <div class="hero-section">
       <div class="hero-content">
@@ -60,22 +60,22 @@
             <div class="formData">
               <label for="first">Prénom</label><br>
               <input class="text-control" type="text" id="first" name="first" /><br>
-              <span id="errorprenom" class="erreur"></span></br>
+              <span id="errorprenom" class="erreur"></span><br>
             </div>
             <div class="formData">
               <label for="last">Nom</label><br>
               <input class="text-control" type="text" id="last" name="last" /><br>
-              <span id="errornom" class="erreur"></span></br>
+              <span id="errornom" class="erreur"></span><br>
             </div>
             <div class="formData">
               <label for="email">E-mail</label><br>
-              <input class="text-control"  id="email" name="email" /><br>
-              <span id="mailerror" class="erreur"></span></br>
+              <input class="text-control" id="email" name="email" /><br>
+              <span id="mailerror" class="erreur"></span><br>
             </div>
             <div class="formData">
               <label for="birthdate">Date de naissance</label><br>
               <input class="text-control" type="date" id="birthdate" name="birthdate" /><br>
-              <span id="dateerror"  class="erreur"></span>
+              <span id="dateerror" class="erreur"></span>
             </div>
             <div class="formData">
               <label for="quantity">À combien de tournois GameOn avez-vous déjà participé ?</label><br>
@@ -83,7 +83,7 @@
               <span id="concourserror" class="erreur"></span>
             </div>
             <p class="text-label">A quel tournoi souhaitez-vous participer cette année ?</p>
-            <div class="formData">
+            <div class="formData" >
               <input class="checkbox-input" type="radio" id="location1" name="location" value="New York" />
               <label class="checkbox-label" for="location1">
                 <span class="checkbox-icon"></span>
@@ -113,12 +113,13 @@
 
             <div class="formData">
               <input class="checkbox-input" type="checkbox" id="checkbox1" name="conditions" checked />
-              <label class="checkbox2-label" for="checkbox1" required>
+              <label class="checkbox2-label" for="checkbox1">
                 <span class="checkbox-icon"></span>
                 J'ai lu et accepté les conditions d'utilisation.
+                <span id="conditionserror" class="erreur"></span>
               </label>
-              <br>
-              <span id="conditionserror" class="erreur"></span><br>
+            
+             
               <input class="checkbox-input" type="checkbox" id="checkbox2" />
               <label class="checkbox2-label" for="checkbox2">
                 <span class="checkbox-icon"></span>
@@ -126,8 +127,8 @@
               </label>
               <br>
             </div>
-            <input class="btn-submit button" type="submit" value="C'est parti" />
-            
+            <input id="submit" class="btn-submit button" type="submit" value="C'est parti" />
+
           </form>
         </div>
       </div>
@@ -138,8 +139,9 @@
       Copyright 2014 - 2022, GameOn Inc.
     </p>
   </footer>
-  <script src="src/js/modal.js"></script>
+<script src="src/js/modal.js"></script>
   <script src="src/js/validations.js"></script>
+
 </body>
 
 </html>
