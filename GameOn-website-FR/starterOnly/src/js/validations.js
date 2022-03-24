@@ -1,4 +1,5 @@
 
+//import changeModalContent from './modal.js';
 /*elements dom*/
 let formReservation = document.getElementById("reserve"); /*formulaire*/
 let prenom = document.getElementById("first");
@@ -8,6 +9,7 @@ let email = document.getElementById("email");
 let birthdate = document.querySelector("#birthdate");
 let tabLocations = formReservation.location;
 let conditions = formReservation.conditions;
+
 
 
 
@@ -128,20 +130,23 @@ const validConcours = () => {
 
 /*check location radio*/
 const validateLocation = () => {
-  var state = false;
-  var message = "";
-  for (i = 0; i < tabLocations.length; i++) {
-    if (tabLocations[i].checked) {
-      state = true;
-      var message = "";
-      break;
-    } else {
-      message = "Vous devez choisir une option!"
-    }
-  }
-  locationError.innerText = message;
-  return state;
+  
+ var state = false;
+ var message = "";
+ for (i = 0; i < tabLocations.length; i++) {
+  tabLocations[i].addEventListener("click",validateLocation);
+   if (tabLocations[i].checked) {
+     state = true;
+     var message = "";
+     break;
+   } else {
+     message = "Vous devez choisir une option!"
+   }
+ }
+ locationError.innerText = message;
+ return state;
 }
+
 
 /*validation des conditions*/
 
@@ -193,6 +198,19 @@ nom.addEventListener("input", validNom);
 nombreConcours.addEventListener("input", validConcours);
 email.addEventListener("input", validMail);
 birthdate.addEventListener("input", validDate);
+conditions.addEventListener("change", validConditions);
+//document.getElementsByName("location").addEventListener("change",validateLocation);
+
+
+/*modal de confirmation*/
+
+
+const changeModalContent = () => {
+  //modalbg.style.display = "block";
+  modalBody.classList.add("answer-modal");
+  //alert("i work");
+  modalBody.innerHTML = ' <form name="answer" id="answer" action="./index.html" method="get"><div><h2>Merci ! Votre réservation a été reçue </h2></div><div><input id="fermer" class="btn-submit button" type="submit"  value="fermer"/></div></form>';
+}
 
 /*verification generale*/
 formReservation.addEventListener('submit', function (e) {
@@ -204,9 +222,10 @@ formReservation.addEventListener('submit', function (e) {
   } else {
     /*afficher les informations*/
     //alert("Merci : " + prenom.value + " ! Votre réservation a été reçue");
-    changeModalContent();
+    changeModalContent(); //confirmation
 
   }
 }
 );
+
 
