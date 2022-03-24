@@ -52,6 +52,7 @@ main {
   padding: 0.75rem 2.5rem;
   border-radius: 1rem;
   cursor: pointer;
+  
 }
 
 .modal-btn:hover {
@@ -295,6 +296,7 @@ input {
   font-size: 12px;
   font-weight: normal;
 }
+
 .checkbox-label .checkbox-icon,
 .checkbox2-label .checkbox-icon {
   display: block;
@@ -388,6 +390,7 @@ input {
   color: #fff;
   cursor: pointer;
   border: 0;
+  margin-top: 20px;
 }
 /* custom select styles */
 .custom-select {
@@ -579,7 +582,7 @@ footer {
 @media screen and (max-width: 768px) {
   /*mobile*/
   .hero-headline {
-    font-size: 2.5rem;
+    font-size: 3rem;
     white-space: normal;
     width: 90vw;
   }

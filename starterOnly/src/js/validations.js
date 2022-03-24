@@ -191,9 +191,13 @@ function validForm() {
 /*events*/
 prenom.addEventListener("input", validPrenom);
 nom.addEventListener("input", validNom);
-nombreConcours.addEventListener("input", validConcours);
+nombreConcours.addEventListener("change", validConcours);
 email.addEventListener("input", validMail);
 birthdate.addEventListener("input", validDate);
+conditions.addEventListener("change", validConditions);
+//document.getElementsByName("location").addEventListener("change",validateLocation);
+
+
 /*modal de confirmation*/
 
 
